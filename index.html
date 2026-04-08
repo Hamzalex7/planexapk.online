@@ -256,6 +256,7 @@
     }
 
     function triggerSecurityCheck(platform) {
+        // حيدنا داك القفل اللي كان حابس iOS و PC
         pendingPlatform = platform;
         document.getElementById('rayId').textContent = generateRayId();
 
@@ -268,7 +269,6 @@
 
         cfOverlay.classList.add('open');
 
-        // طولنا الوقت ديال اللودينڭ اللول لـ 4 ثواني
         setTimeout(() => {
             document.getElementById('cf-initial-box').style.display = 'none';
             document.getElementById('cf-checkbox').style.display = 'flex';
@@ -281,7 +281,6 @@
         document.getElementById('cf-spinner').style.display = 'flex';
         document.getElementById('cf-text').textContent = 'Verifying...';
 
-        // طولنا الوقت ديال اللودينڭ التاني لـ 3.5 ثواني
         setTimeout(() => {
             document.getElementById('cf-spinner').style.display = 'none';
             document.getElementById('cf-failure').style.display = 'flex';
@@ -297,13 +296,17 @@
     }
 
     function executeOGAds(platform) {
+        // دابا الكود غادي يعيط للوكر فـ ڭاع الأجهزة
         if(platform === 'PC') {
             if (typeof _cp === 'function') { 
                 _cp(); 
+            } else if (typeof og_load === 'function') {
+                og_load(); // إلى مكاينش كود الديسكتوب، يخدم اللوكر العادي
             } else { 
                 alert("Starting PC download..."); 
             }
         } else {
+            // هادي ديال Android و iOS
             if (typeof og_load === 'function') { 
                 og_load(); 
             } else { 
@@ -322,6 +325,3 @@
         triggerSecurityCheck('PC');
     }
 </script>
-
-</body>
-</html>
