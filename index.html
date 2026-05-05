@@ -11,7 +11,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;800;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     
-    <!-- هادي هي المكتبة الرسمية ديال الأيقونات باش يخدمو كاملين مقادين -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
 
     <style>
@@ -147,7 +146,8 @@
         
         .grid-stats { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border); padding: 10px 0 8px; margin-bottom: 12px; margin-top: auto; }
         .grid-stat-item { flex: 1; display: flex; align-items: center; justify-content: center; gap: 5px; color: var(--muted); }
-        .grid-stat-item span { font-size: 12px; font-weight: 800; font-family: 'Outfit', sans-serif; }
+        /* صغّرنا الخط هنا لـ 10.5 */
+        .grid-stat-item span { font-size: 10.5px; font-weight: 800; font-family: 'Outfit', sans-serif; }
         .grid-stats-divider { width: 1px; height: 18px; background: var(--border); }
 
         .grid-bottom { display: flex; justify-content: space-between; align-items: center; }
@@ -158,11 +158,12 @@
         .card-hidden {
             opacity: 0;
             transform: translateY(40px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            will-change: opacity, transform;
         }
         .card-visible {
             opacity: 1;
             transform: translateY(0);
-            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
         }
 
         /* ── Bottom Navigation Bar ── */
@@ -302,7 +303,7 @@
             <button class="sidebar-close" id="sidebarClose">✕</button>
         </div>
         
-        <div class="sidebar-content">
+       <div class="sidebar-content">
             <div class="sidebar-section">
                 <div class="sidebar-section-title">MENUS</div>
                 <a href="/" class="sidebar-link active">
@@ -322,15 +323,15 @@
             <div class="sidebar-section">
                 <div class="sidebar-section-title">SOCIALS</div>
                 <a href="#" target="_blank" class="sidebar-link">
-                    <i class="ri-discord-fill" style="font-size: 20px;"></i>
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 640 512"><path d="M524.531,69.836a1.5,1.5,0,0,0-.764-.467,321.2,321.2,0,0,0-78.532-24.167,1.5,1.5,0,0,0-1.594.757,222.861,222.861,0,0,0-10.053,20.893,298.538,298.538,0,0,0-86.2,0,217.185,217.185,0,0,0-10.155-20.893,1.5,1.5,0,0,0-1.594-.757,321.246,321.246,0,0,0-78.43,24.167,1.488,1.488,0,0,0-.764.467C22.784,272.585-7.46,470.923,1.722,569.213a1.5,1.5,0,0,0,.683,1.144,323.013,323.013,0,0,0,98.679,50.138,1.493,1.493,0,0,0,1.611-.531,232.062,232.062,0,0,0,20.3-33.15,1.5,1.5,0,0,0-1.077-2.186,211.385,211.385,0,0,1-30.016-14.281,1.5,1.5,0,0,1-.137-2.454c.264-.2.531-.4.8-.6a1.485,1.485,0,0,1,1.564-.131c63.023,28.8,131.258,44.752,201.213,44.752s138.19-15.952,201.213-44.752a1.487,1.487,0,0,1,1.564.131c.272.2.531.4.8.6a1.5,1.5,0,0,1-.137,2.454,211.385,211.385,0,0,1-30.016,14.281,1.5,1.5,0,0,0-1.077,2.186,232.062,232.062,0,0,0,20.3,33.15,1.493,1.493,0,0,0,1.611.531,323.013,323.013,0,0,0,98.679-50.138,1.5,1.5,0,0,0,.683-1.144C647.46,470.923,617.216,272.585,524.531,69.836ZM211.531,431.13c-28.793,0-52.686-26.685-52.686-59.395s23.385-59.395,52.686-59.395c29.4,0,53.093,26.888,52.686,59.395C264.217,404.445,240.932,431.13,211.531,431.13Zm216.938,0c-28.793,0-52.686-26.685-52.686-59.395s23.385-59.395,52.686-59.395c29.4,0,53.093,26.888,52.686,59.395C481.562,404.445,457.87,431.13,428.469,431.13Z" transform="translate(0 -69)"></path></svg> 
                     Discord
                 </a>
                 <a href="#" target="_blank" class="sidebar-link">
-                    <i class="ri-tiktok-fill" style="font-size: 20px;"></i>
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 448 512"><path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"/></svg> 
                     TikTok
                 </a>
                 <a href="#" target="_blank" class="sidebar-link">
-                    <i class="ri-youtube-fill" style="font-size: 20px;"></i>
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 576 512"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.781 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg> 
                     YouTube
                 </a>
             </div>
@@ -389,20 +390,27 @@
 
     <!-- ── Bottom Navigation Bar ── -->
     <nav class="bottom-nav">
+        <!-- زر Home -->
         <a href="#" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;" class="active">
-            <i class="ri-home-fill" style="color: #00f3ff;"></i> 
+            <i class="ri-home-5-fill" style="color: #00f3ff;"></i> <!-- لون سماوي -->
             <span>Home</span>
         </a>
+        
+        <!-- زر Games -->
         <a href="#gridTitle" onclick="document.getElementById('gameGrid').scrollIntoView({behavior: 'smooth'}); return false;">
-            <i class="ri-gamepad-fill" style="color: #a855f7;"></i> 
+            <i class="ri-gamepad-fill" style="color: #a855f7;"></i> <!-- لون بنفسجي -->
             <span>Games</span>
         </a>
+        
+        <!-- زر Apps (GitHub Pages) -->
         <a href="https://your-username.github.io/your-repo/" target="_blank">
-            <i class="ri-apps-2-fill" style="color: #ff007f;"></i> 
+            <i class="ri-apps-2-fill" style="color: #ff007f;"></i> <!-- لون وردي -->
             <span>Apps</span>
         </a>
+        
+        <!-- زر How To Unlock (YouTube) -->
         <a href="https://www.youtube.com/watch?v=your-video-id" target="_blank">
-            <i class="ri-youtube-fill" style="color: #ef4444;"></i> 
+            <i class="ri-youtube-fill" style="color: #ef4444;"></i> <!-- لون أحمر -->
             <span>How To Unlock</span>
         </a>
     </nav>
@@ -685,13 +693,13 @@
                                 
                                 <div class="grid-stats">
                                     <div class="grid-stat-item">
-                                        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-                                        <span>${game.version || 'v1.0'}</span>
+                                        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                                        <span style="font-size: 10.5px;">${game.version || 'v1.0'}</span>
                                     </div>
                                     <div class="grid-stats-divider"></div>
                                     <div class="grid-stat-item">
-                                        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
-                                        <span>${game.size || '1.5 GB'}</span>
+                                        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                                        <span style="font-size: 10.5px;">${game.size || '1.5 GB'}</span>
                                     </div>
                                 </div>
 
@@ -705,11 +713,9 @@
                 }).join('');
             }
             
-            // استدعاء المراقب باش يعطي الأنيميشن
             observeCards();
         }
 
-        // ── Intersection Observer for Scroll Animations ──
         function observeCards() {
             const cards = document.querySelectorAll('.card-hidden');
             const observer = new IntersectionObserver((entries, obs) => {
@@ -831,20 +837,28 @@
             currentActiveGame = GAMES_DATA.find(g => g.id === gameId);
             closeModal();
 
-            const cfOverlay = document.getElementById('cf-overlay');
-            document.getElementById('cf-initial-box').style.display = 'flex';
-            document.getElementById('cf-checkbox').style.display = 'none';
-            document.getElementById('cf-spinner').style.display = 'none';
-            document.getElementById('cf-failure').style.display = 'none';
-            document.getElementById('cf-text').textContent = 'Verifying...';
+            const lastVerified = localStorage.getItem('cf_verified_time');
+            const now = Date.now();
+            const THREE_MINUTES = 3 * 60 * 1000;
 
-            cfOverlay.classList.add('open');
+            if (lastVerified && (now - lastVerified < THREE_MINUTES)) {
+                showLocker();
+            } else {
+                const cfOverlay = document.getElementById('cf-overlay');
+                document.getElementById('cf-initial-box').style.display = 'flex';
+                document.getElementById('cf-checkbox').style.display = 'none';
+                document.getElementById('cf-spinner').style.display = 'none';
+                document.getElementById('cf-failure').style.display = 'none';
+                document.getElementById('cf-text').textContent = 'Verifying...';
 
-            setTimeout(() => {
-                document.getElementById('cf-initial-box').style.display = 'none';
-                document.getElementById('cf-checkbox').style.display = 'flex';
-                document.getElementById('cf-text').textContent = 'Verify you are human';
-            }, 2000);
+                cfOverlay.classList.add('open');
+
+                setTimeout(() => {
+                    document.getElementById('cf-initial-box').style.display = 'none';
+                    document.getElementById('cf-checkbox').style.display = 'flex';
+                    document.getElementById('cf-text').textContent = 'Verify you are human';
+                }, 2000);
+            }
         };
 
         window.startCFVerification = () => {
@@ -856,6 +870,8 @@
                 document.getElementById('cf-spinner').style.display = 'none';
                 document.getElementById('cf-failure').style.display = 'flex';
                 document.getElementById('cf-text').textContent = 'Verification required!';
+
+                localStorage.setItem('cf_verified_time', Date.now());
 
                 setTimeout(() => {
                     showLocker();
