@@ -10,6 +10,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;800;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <!-- هادي هي المكتبة الرسمية ديال الأيقونات باش يخدمو كاملين مقادين -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
 
     <style>
         *, *::before, *::after { box-sizing: border-box; }
@@ -54,22 +57,19 @@
             scrollbar-width: none;
             -ms-overflow-style: none;
             transition: background-color 0.3s, color 0.3s;
-            /* النقيطات خفاف باش يبان اللون مزيان */
             background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
             background-size: 24px 24px;
-            /* حيدنا position: relative باش الهيدر يبقى يخدم عادي */
         }
 
-        /* الضو المتدرج باللون ديال Netflix / YouTube مدمج مع الكحل */
         body::before {
             content: '';
-            position: fixed; /* ضروري fixed باش مايخسرش السكرول */
+            position: fixed; 
             top: 0; left: 0; right: 0; bottom: 0;
             background: radial-gradient(ellipse at top, rgba(225, 29, 72, 0.15) 0%, rgba(153, 27, 43, 0.08) 40%, transparent 80%);
             z-index: -1;
             pointer-events: none;
         }
-        
+
         #main-header {
             position: fixed; top: 0; left: 0; right: 0; z-index: 50;
             transition: transform 0.3s ease, background 0.3s ease, top 0.3s ease;
@@ -112,20 +112,39 @@
         .sort-select { background: var(--card2); border: 1px solid var(--border); border-radius: 12px; color: var(--muted); font-size: 13px; font-weight: 700; padding: 8px 14px; cursor: pointer; outline: none; font-family: 'Outfit', sans-serif; }
         .sort-select:hover { border-color: var(--cyan); }
 
-        /* ── Game Cards — Grid (الديزاين الجديد الناضي) ── */
-        #gameGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+        .view-btn { padding: 8px 12px; border-radius: 12px; border: 1px solid var(--border); background: var(--card2); cursor: pointer; transition: all 0.2s; color: var(--muted); display: flex; align-items: center; justify-content: center; }
+        .view-btn.active { background: var(--border); color: var(--text); border-color: var(--cyan); }
+
+        /* ── Game Cards — Grid & List ── */
+        #gameGrid.list-view { display: flex; flex-direction: column; gap: 14px; max-width: 700px; margin: 0 auto; }
+        .game-card-list { display: flex; align-items: center; gap: 0; border-radius: 20px; background: var(--card); border: 1px solid var(--border); overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; }
+        .game-card-list:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); border-color: var(--cyan); }
+        .card-thumb { width: 125px; height: 120px; flex-shrink: 0; overflow: hidden; position: relative; padding: 6px; }
+        .card-thumb img { width: 100%; height: 100%; object-fit: cover; border-radius: 14px; transition: transform 0.4s; }
+        .game-card-list:hover .card-thumb img { transform: scale(1.06); }
+        .card-rating { position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.7); color: #fff; padding: 2px 6px; border-radius: 8px; font-size: 10px; font-weight: 800; font-family: 'DM Mono', monospace; }
+        .card-body { flex: 1; padding: 12px 16px; display: flex; flex-direction: column; gap: 4px; }
+        .card-cat { font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.08em; text-align: center; }
+        .card-title { font-size: 17px; font-weight: 800; color: var(--text); line-height: 1.2; letter-spacing: -0.01em; text-align: center; margin-bottom: 4px; }
+        .card-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px; justify-content: center; }
+        .tag { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; padding: 3px 8px; border-radius: 6px; background: var(--card2); color: var(--muted); }
+        .new-badge { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; padding: 3px 8px; border-radius: 6px; background: rgba(0,243,255,0.15); color: var(--cyan); }
+        .card-action { padding: 12px 16px 12px 0; flex-shrink: 0; }
+        .dl-btn-list { padding: 10px 18px; border-radius: 12px; border: 1px solid var(--border); background: var(--card2); font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: var(--cyan); cursor: pointer; white-space: nowrap; transition: all 0.2s; font-family: 'Outfit', sans-serif; }
+        .dl-btn-list:hover { background: var(--cyan); color: #fff; transform: translateY(-2px); border-color: transparent;}
+
+        #gameGrid.grid-view { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
         .game-card-grid { border-radius: 20px; background: var(--card); border: 1px solid var(--border); overflow: hidden; transition: transform 0.2s; cursor: pointer; padding: 8px; display: flex; flex-direction: column; }
         .game-card-grid:hover { transform: translateY(-4px); border-color: var(--cyan); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
         
         .grid-thumb { width: 100%; aspect-ratio: 16/9; overflow: hidden; position: relative; border-radius: 14px; }
         .grid-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
         .game-card-grid:hover .grid-thumb img { transform: scale(1.06); }
-        .card-rating { position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.7); color: #fff; padding: 2px 6px; border-radius: 8px; font-size: 10px; font-weight: 800; font-family: 'DM Mono', monospace; }
-
-        .grid-body { padding: 14px 6px 6px; display: flex; flex-direction: column; flex: 1; }
-        .grid-title { font-size: 16px; font-weight: 800; color: var(--text); margin-bottom: 20px; line-height: 1.2; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
         
-        /* القسم ديال Size و Version (حيدنا الخط التحتاني وهبطناه شوية لتحت) */
+        .grid-body { padding: 14px 6px 6px; display: flex; flex-direction: column; flex: 1; }
+        .grid-title { font-size: 16px; font-weight: 800; color: var(--text); line-height: 1.2; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-align: center; margin-bottom: 4px; }
+        .card-cat { font-size: 10px; margin-bottom: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; text-align: center; }
+        
         .grid-stats { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border); padding: 10px 0 8px; margin-bottom: 12px; margin-top: auto; }
         .grid-stat-item { flex: 1; display: flex; align-items: center; justify-content: center; gap: 5px; color: var(--muted); }
         .grid-stat-item span { font-size: 12px; font-weight: 800; font-family: 'Outfit', sans-serif; }
@@ -134,6 +153,50 @@
         .grid-bottom { display: flex; justify-content: space-between; align-items: center; }
         .grid-dl-btn { padding: 8px 16px; border-radius: 10px; border: 1px solid var(--border); background: var(--card2); font-size: 12px; font-weight: 800; text-transform: uppercase; color: var(--cyan); cursor: pointer; font-family: 'Outfit', sans-serif; transition: all 0.2s; letter-spacing: 0.05em; }
         .grid-dl-btn:hover { background: var(--cyan); color: #fff; }
+
+        /* ── Scroll Animations for Cards ── */
+        .card-hidden {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+        .card-visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+
+        /* ── Bottom Navigation Bar ── */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(13, 19, 34, 0.85); 
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 12px 10px;
+            padding-bottom: calc(12px + env(safe-area-inset-bottom));
+            z-index: 990;
+        }
+        .bottom-nav a {
+            display: flex; flex-direction: column; align-items: center; gap: 4px;
+            text-decoration: none; color: var(--muted); font-size: 10px;
+            font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+        }
+        .bottom-nav a i { font-size: 22px; transition: transform 0.3s ease, filter 0.3s ease; }
+        .bottom-nav a:hover { color: var(--text); }
+        .bottom-nav a:hover i { transform: translateY(-3px); filter: brightness(1.2); }
+        .bottom-nav a.active { color: var(--text); }
+        .bottom-nav a.active i { filter: drop-shadow(0 0 8px currentColor); }
+
+        #backToTop { position: fixed; right: 24px; width: 46px; height: 46px; border-radius: 50%; background: var(--card); border: 1px solid var(--border); color: var(--text); display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: 0; visibility: hidden; transform: translateY(20px); transition: all 0.3s; z-index: 40; box-shadow: 0 10px 20px rgba(0,0,0,0.1); bottom: 85px; }
+        #backToTop.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+        #backToTop:hover { transform: translateY(-4px); border-color: var(--cyan); }
 
         /* ── SUPER PRO MODAL ── */
         #modalOverlay { position: fixed; inset: 0; z-index: 10000; display: none; align-items: center; justify-content: center; padding: 16px; perspective: 1000px; }
@@ -167,11 +230,6 @@
         .locker-overlay.open { display: flex; }
         .locker-box { width: 90%; max-width: 1000px; height: 80vh; background: #000; border-radius: 24px; border: 1px solid rgba(255,255,255,0.1); overflow: hidden; position: relative; }
 
-        /* ── Back to top ── */
-        #backToTop { position: fixed; bottom: 24px; right: 24px; width: 46px; height: 46px; border-radius: 50%; background: var(--card); border: 1px solid var(--border); color: var(--text); display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: 0; visibility: hidden; transform: translateY(20px); transition: all 0.3s; z-index: 40; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        #backToTop.visible { opacity: 1; visibility: visible; transform: translateY(0); }
-        #backToTop:hover { transform: translateY(-4px); border-color: var(--cyan); }
-
         /* ── Sidebar Menu ── */
         .sidebar-overlay { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(5px); z-index: 999; opacity: 0; visibility: hidden; transition: all 0.3s ease; }
         .sidebar-overlay.active { opacity: 1; visibility: visible; }
@@ -197,7 +255,6 @@
         .join-btn { display: flex; align-items: center; justify-content: center; width: 100%; padding: 12px; border-radius: 12px; background: var(--cyan); color: #000; font-weight: 800; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.05em; transition: all 0.2s; margin-top: 1rem; }
         .join-btn:hover { opacity: 0.9; transform: translateY(-2px); }
 
-        /* ── Animations ── */
         @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes pulse-cyan { 0%,100% { box-shadow: 0 0 0 0 rgba(0,243,255,0.35); } 70% { box-shadow: 0 0 0 8px rgba(0,243,255,0); } }
         @keyframes cf-spin { 100% { transform: rotate(360deg); } }
@@ -249,15 +306,15 @@
             <div class="sidebar-section">
                 <div class="sidebar-section-title">MENUS</div>
                 <a href="/" class="sidebar-link active">
-                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> 
+                    <i class="ri-home-fill" style="font-size: 20px;"></i>
                     Home
                 </a>
                 <a href="#games" class="sidebar-link" onclick="closeSidebar()">
-                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/></svg> 
+                    <i class="ri-gamepad-fill" style="font-size: 20px;"></i>
                     Games
                 </a>
                 <a href="#" class="sidebar-link" onclick="closeSidebar()">
-                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> 
+                    <i class="ri-fire-fill" style="font-size: 20px;"></i>
                     Trending
                 </a>
             </div>
@@ -265,15 +322,15 @@
             <div class="sidebar-section">
                 <div class="sidebar-section-title">SOCIALS</div>
                 <a href="#" target="_blank" class="sidebar-link">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 640 512"><path d="M524.531,69.836a1.5,1.5,0,0,0-.764-.467,321.2,321.2,0,0,0-78.532-24.167,1.5,1.5,0,0,0-1.594.757,222.861,222.861,0,0,0-10.053,20.893,298.538,298.538,0,0,0-86.2,0,217.185,217.185,0,0,0-10.155-20.893,1.5,1.5,0,0,0-1.594-.757,321.246,321.246,0,0,0-78.43,24.167,1.488,1.488,0,0,0-.764.467C22.784,272.585-7.46,470.923,1.722,569.213a1.5,1.5,0,0,0,.683,1.144,323.013,323.013,0,0,0,98.679,50.138,1.493,1.493,0,0,0,1.611-.531,232.062,232.062,0,0,0,20.3-33.15,1.5,1.5,0,0,0-1.077-2.186,211.385,211.385,0,0,1-30.016-14.281,1.5,1.5,0,0,1-.137-2.454c.264-.2.531-.4.8-.6a1.485,1.485,0,0,1,1.564-.131c63.023,28.8,131.258,44.752,201.213,44.752s138.19-15.952,201.213-44.752a1.487,1.487,0,0,1,1.564.131c.272.2.531.4.8.6a1.5,1.5,0,0,1-.137,2.454,211.385,211.385,0,0,1-30.016,14.281,1.5,1.5,0,0,0-1.077,2.186,232.062,232.062,0,0,0,20.3,33.15,1.493,1.493,0,0,0,1.611.531,323.013,323.013,0,0,0,98.679-50.138,1.5,1.5,0,0,0,.683-1.144C647.46,470.923,617.216,272.585,524.531,69.836ZM211.531,431.13c-28.793,0-52.686-26.685-52.686-59.395s23.385-59.395,52.686-59.395c29.4,0,53.093,26.888,52.686,59.395C264.217,404.445,240.932,431.13,211.531,431.13Zm216.938,0c-28.793,0-52.686-26.685-52.686-59.395s23.385-59.395,52.686-59.395c29.4,0,53.093,26.888,52.686,59.395C481.562,404.445,457.87,431.13,428.469,431.13Z" transform="translate(0 -69)"></path></svg> 
+                    <i class="ri-discord-fill" style="font-size: 20px;"></i>
                     Discord
                 </a>
                 <a href="#" target="_blank" class="sidebar-link">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 448 512"><path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"/></svg> 
+                    <i class="ri-tiktok-fill" style="font-size: 20px;"></i>
                     TikTok
                 </a>
                 <a href="#" target="_blank" class="sidebar-link">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 576 512"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.781 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg> 
+                    <i class="ri-youtube-fill" style="font-size: 20px;"></i>
                     YouTube
                 </a>
             </div>
@@ -282,7 +339,7 @@
         </div>
     </nav>
 
-    <main style="padding-top: 85px; padding-bottom: 80px;">
+    <main style="padding-top: 85px; padding-bottom: 120px;">
 
         <div class="max-w-6xl mx-auto px-5 mt-8">
 
@@ -301,16 +358,23 @@
                             <option value="za">Z → A</option>
                         </select>
                     </div>
+                    <div class="flex gap-2">
+                        <button class="view-btn" id="listViewBtn" aria-label="List view">
+                            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="4" rx="2"/><rect x="3" y="10" width="18" height="4" rx="2"/><rect x="3" y="16" width="18" height="4" rx="2"/></svg>
+                        </button>
+                        <button class="view-btn active" id="gridViewBtn" aria-label="Grid view">
+                            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/></svg>
+                        </button>
+                    </div>
                 </div>
             </div>
 
-            <!-- هادا هو الكريد الجديد فين كيبانو الكارطيات -->
             <div id="gameGrid" class="animate-fade-up anim-delay-3"></div>
 
         </div>
     </main>
 
-    <footer style="border-top:1px solid var(--border);background:var(--card);padding:48px 24px;text-align:center;">
+    <footer style="border-top:1px solid var(--border);background:var(--card);padding:48px 24px 100px;text-align:center;">
         <div class="max-w-6xl mx-auto">
             <div class="logo" style="margin-bottom:16px;font-size:28px;">Planex<span style="color:var(--cyan);">Apk</span></div>
             <p style="font-size:14px;color:var(--muted);margin-bottom:24px;max-width:400px;margin-left:auto;margin-right:auto;line-height:1.6;font-weight:500;">The best place to discover and download Mobile & Modded Versions of games for iOS & Android.</p>
@@ -322,6 +386,26 @@
             <p style="font-size:11px;color:var(--muted);font-weight:800;letter-spacing:0.2em;text-transform:uppercase;">© 2026 PLANEXAPK · ALL RIGHTS RESERVED</p>
         </div>
     </footer>
+
+    <!-- ── Bottom Navigation Bar ── -->
+    <nav class="bottom-nav">
+        <a href="#" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;" class="active">
+            <i class="ri-home-fill" style="color: #00f3ff;"></i> 
+            <span>Home</span>
+        </a>
+        <a href="#gridTitle" onclick="document.getElementById('gameGrid').scrollIntoView({behavior: 'smooth'}); return false;">
+            <i class="ri-gamepad-fill" style="color: #a855f7;"></i> 
+            <span>Games</span>
+        </a>
+        <a href="https://your-username.github.io/your-repo/" target="_blank">
+            <i class="ri-apps-2-fill" style="color: #ff007f;"></i> 
+            <span>Apps</span>
+        </a>
+        <a href="https://www.youtube.com/watch?v=your-video-id" target="_blank">
+            <i class="ri-youtube-fill" style="color: #ef4444;"></i> 
+            <span>How To Unlock</span>
+        </a>
+    </nav>
 
     <div id="modalOverlay">
         <div class="modal-backdrop" id="modalClose"></div>
@@ -439,6 +523,7 @@
         let currentActiveGame = null;
         let currentCategory = 'All';
         let currentSort = 'default';
+        let currentView = 'grid';
 
         const gameGrid = document.getElementById('gameGrid');
         const heroSlider = document.getElementById('heroSlider');
@@ -451,6 +536,8 @@
         const backToTopBtn = document.getElementById('backToTop');
         const mainHeader = document.getElementById('main-header');
         const sortSelect = document.getElementById('sortSelect');
+        const listViewBtn = document.getElementById('listViewBtn');
+        const gridViewBtn = document.getElementById('gridViewBtn');
 
         const htmlEl = document.documentElement;
         const themeToggleBtn = document.getElementById('themeToggle');
@@ -557,21 +644,46 @@
                 return;
             }
 
-            gameGrid.className = 'grid-view';
-            gameGrid.innerHTML = filtered.map(game => {
-                const accent = CATEGORY_ACCENT[game.category] || '#00f3ff';
-                return `
-                    <div class="game-card-grid" onclick="openModal('${game.id}')">
-                        <div class="grid-thumb">
-                            <img src="${game.thumbnail}" alt="${game.title}" loading="lazy" decoding="async">
-                            <div class="card-rating">★ ${game.rating}</div>
-                            ${game.isNew ? '<div style="position:absolute;top:8px;left:8px;font-size:9px;font-weight:900;text-transform:uppercase;padding:4px 8px;border-radius:6px;background:rgba(0,243,255,0.2);color:#00f3ff;letter-spacing:0.06em;backdrop-filter:blur(4px);">New</div>' : ''}
+            if (currentView === 'list') {
+                gameGrid.className = 'list-view';
+                gameGrid.innerHTML = filtered.map(game => {
+                    const accent = CATEGORY_ACCENT[game.category] || '#00f3ff';
+                    return `
+                        <div class="game-card-list card-hidden" onclick="openModal('${game.id}')">
+                            <div class="card-thumb">
+                                <img src="${game.thumbnail}" alt="${game.title}" loading="lazy" decoding="async">
+                                <div class="card-rating">★ ${game.rating}</div>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-title" style="text-align: center; margin-bottom: 4px;">${game.title}</div>
+                                <span class="card-cat" style="color:${accent}; display: block; text-align: center; margin-bottom: 8px;">${game.category}</span>
+                                <div class="card-tags" style="justify-content: center;">
+                                    ${game.isNew ? '<span class="new-badge">New</span>' : ''}
+                                    ${game.rating >= 4.8 ? '<span class="tag">Top Rated</span>' : ''}
+                                </div>
+                            </div>
+                            <div class="card-action">
+                                <button class="dl-btn-list" onclick="event.stopPropagation();openModal('${game.id}')">Get</button>
+                            </div>
                         </div>
-                        <div class="grid-body">
-                            <div class="card-cat" style="color:${accent};font-size:10px;margin-bottom:4px;font-weight:800;text-transform:uppercase;letter-spacing:0.05em;">${game.category}</div>
-                            <div class="grid-title">${game.title}</div>
-                            
-                            <div class="grid-stats">
+                    `;
+                }).join('');
+            } else {
+                gameGrid.className = 'grid-view';
+                gameGrid.innerHTML = filtered.map(game => {
+                    const accent = CATEGORY_ACCENT[game.category] || '#00f3ff';
+                    return `
+                        <div class="game-card-grid card-hidden" onclick="openModal('${game.id}')">
+                            <div class="grid-thumb">
+                                <img src="${game.thumbnail}" alt="${game.title}" loading="lazy" decoding="async">
+                                <div class="card-rating">★ ${game.rating}</div>
+                                ${game.isNew ? '<div style="position:absolute;top:8px;left:8px;font-size:9px;font-weight:900;text-transform:uppercase;padding:4px 8px;border-radius:6px;background:rgba(0,243,255,0.2);color:#00f3ff;letter-spacing:0.06em;backdrop-filter:blur(4px);">New</div>' : ''}
+                            </div>
+                            <div class="grid-body">
+                                <div class="grid-title" style="text-align: center; margin-bottom: 4px;">${game.title}</div>
+                                <div class="card-cat" style="color:${accent};font-size:10px;margin-bottom:12px;font-weight:800;text-transform:uppercase;letter-spacing:0.05em; text-align: center;">${game.category}</div>
+                                
+                                <div class="grid-stats">
                                     <div class="grid-stat-item">
                                         <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
                                         <span>${game.version || 'v1.0'}</span>
@@ -583,14 +695,39 @@
                                     </div>
                                 </div>
 
-                            <div class="grid-bottom">
-                                <span style="font-size:12px;font-weight:800;color:var(--muted);">★ ${game.rating}</span>
-                                <button class="grid-dl-btn" onclick="event.stopPropagation();openModal('${game.id}')">Get</button>
+                                <div class="grid-bottom">
+                                    <span style="font-size:12px;font-weight:800;color:var(--muted);">★ ${game.rating}</span>
+                                    <button class="grid-dl-btn" onclick="event.stopPropagation();openModal('${game.id}')">Get</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                `;
-            }).join('');
+                    `;
+                }).join('');
+            }
+            
+            // استدعاء المراقب باش يعطي الأنيميشن
+            observeCards();
+        }
+
+        // ── Intersection Observer for Scroll Animations ──
+        function observeCards() {
+            const cards = document.querySelectorAll('.card-hidden');
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('card-visible');
+                            entry.target.classList.remove('card-hidden');
+                        }, index * 80); 
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, {
+                rootMargin: '50px 0px',
+                threshold: 0.05
+            });
+
+            cards.forEach(card => observer.observe(card));
         }
 
         window.openModal = (gameId) => {
@@ -812,6 +949,32 @@
                 renderGames(searchInput.value);
             });
         }
+
+        if(listViewBtn && gridViewBtn) {
+            listViewBtn.addEventListener('click', () => {
+                currentView = 'list';
+                listViewBtn.classList.add('active');
+                gridViewBtn.classList.remove('active');
+                renderGames(searchInput.value);
+            });
+            gridViewBtn.addEventListener('click', () => {
+                currentView = 'grid';
+                gridViewBtn.classList.add('active');
+                listViewBtn.classList.remove('active');
+                renderGames(searchInput.value);
+            });
+        }
+
+        // ── Bottom Nav Logic ──
+        const bottomNavLinks = document.querySelectorAll('.bottom-nav a');
+        bottomNavLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                if(this.getAttribute('target') !== '_blank') {
+                    bottomNavLinks.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                }
+            });
+        });
 
         // Initialize Everything
         initSlider();
