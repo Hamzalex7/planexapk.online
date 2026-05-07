@@ -248,8 +248,10 @@
     <header id="main-header" class="px-5 py-4">
         <div class="max-w-6xl mx-auto flex justify-between items-center relative">
             <div class="flex items-center gap-2">
-                <img src="https://i.ibb.co/gbsY945Q/Black-and-Green-Illustrative-E-Sports-Gaming-Logo-2-removebg.png" alt="Planex Logo" style="width: 28px; height: 28px; object-fit: contain;">
-                <div class="logo">Planex<span>Apk</span></div>
+                <a href="https://planexapk.online/" style="display: flex; align-items: center; text-decoration: none; gap: 8px;">
+                    <img src="https://i.ibb.co/gbsY945Q/Black-and-Green-Illustrative-E-Sports-Gaming-Logo-2-removebg.png" alt="Planex Logo" style="width: 28px; height: 28px; object-fit: contain;">
+                    <div class="logo">Planex<span>Apk</span></div>
+                </a>
             </div>
 
             <div class="flex gap-2 items-center">
@@ -277,7 +279,7 @@
         <div class="sidebar-content">
             <div class="sidebar-section">
                 <div class="sidebar-section-title">MENUS</div>
-                <a href="/" class="sidebar-link active">
+                <a href="https://planexapk.online/" class="sidebar-link active">
                     <i class="ri-home-fill" style="font-size: 20px;"></i> Home
                 </a>
                 <a href="https://planexapk.online/Games/" class="sidebar-link">
@@ -392,16 +394,15 @@
     </footer>
 
     <nav class="bottom-nav">
-        <!-- زر Home -->
-        <a href="#" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;" class="active">
-            <i class="ri-home-5-fill" style="color: #00f3ff;"></i> <!-- لون سماوي -->
+        <a href="#" class="active" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;">
+            <i class="ri-home-5-fill" style="color: #00f3ff;"></i> 
             <span>Home</span>
         </a>
         <a href="https://planexapk.online/Games/">
             <i class="ri-gamepad-fill" style="color: #a855f7;"></i> 
             <span>Games</span>
         </a>
-        <a href="apps.html">
+        <a href="https://planexapk.online/Apps/">
             <i class="ri-apps-2-fill" style="color: #ff007f;"></i> 
             <span>Apps</span>
         </a>
@@ -571,9 +572,9 @@
         const appsScrollTrack = document.getElementById('appsScrollTrack');
         appsScrollTrack.innerHTML = APPS_SCROLL_DATA.map(item => `<div class="scroll-item">${generateCardHTML(item)}</div>`).join('') + `
             <div class="scroll-item">
-                <a href="apps.html" class="view-more-card" style="border-color: var(--pink); color: var(--pink);">
+                <a href="https://planexapk.online/Apps/" class="view-more-card" style="border-color: var(--pink); color: var(--pink);">
                     <i class="ri-arrow-right-circle-line"></i>
-                    <span>https://planexapk.online/Apps/</span>
+                    <span>View More</span>
                 </a>
             </div>
         `;
