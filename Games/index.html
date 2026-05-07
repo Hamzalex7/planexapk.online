@@ -297,7 +297,7 @@
     <header id="main-header" class="px-5 py-4">
         <div class="max-w-6xl mx-auto flex justify-between items-center relative">
             <div class="flex items-center gap-2">
-                <a href="index.html" style="display: flex; align-items: center; text-decoration: none; gap: 8px;">
+                <a href="https://planexapk.online/" style="display: flex; align-items: center; text-decoration: none; gap: 8px;">
                     <img src="https://i.ibb.co/gbsY945Q/Black-and-Green-Illustrative-E-Sports-Gaming-Logo-2-removebg.png" alt="Planex Logo" style="width: 28px; height: 28px; object-fit: contain;">
                     <div class="logo">Planex<span>Apk</span></div>
                 </a>
@@ -334,15 +334,15 @@
        <div class="sidebar-content">
             <div class="sidebar-section">
                 <div class="sidebar-section-title">MENUS</div>
-                <a href="index.html" class="sidebar-link">
+                <a href="https://planexapk.online/" class="sidebar-link">
                     <i class="ri-home-fill" style="font-size: 20px;"></i>
                     Home
                 </a>
-                <a href="#" class="sidebar-link active" onclick="closeSidebar()">
+                <a href="#" class="sidebar-link active" onclick="closeSidebar(); window.scrollTo({ top: 0, behavior: 'smooth' }); return false;">
                     <i class="ri-gamepad-fill" style="font-size: 20px;"></i>
                     Games
                 </a>
-                <a href="apps.html" class="sidebar-link" onclick="closeSidebar()">
+                <a href="https://planexapk.online/Apps/" class="sidebar-link">
                     <i class="ri-apps-2-fill" style="font-size: 20px;"></i>
                     Apps
                 </a>
@@ -420,23 +420,23 @@
     </footer>
 
     <nav class="bottom-nav">
-        <a href="index.html">
-            <i class="ri-home-fill" style="color: #00f3ff;"></i> 
+        <a href="https://planexapk.online/">
+            <i class="ri-home-fill" style="color: #00f3ff;"></i>
             <span>Home</span>
         </a>
         
         <a href="#" class="active" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;">
-            <i class="ri-gamepad-fill" style="color: #a855f7;"></i> 
+            <i class="ri-gamepad-fill" style="color: #a855f7;"></i>
             <span>Games</span>
         </a>
         
-        <a href="apps.html">
-            <i class="ri-apps-2-fill" style="color: #ff007f;"></i> 
+        <a href="https://planexapk.online/Apps/">
+            <i class="ri-apps-2-fill" style="color: #ff007f;"></i>
             <span>Apps</span>
         </a>
         
         <a href="https://www.youtube.com/watch?v=your-video-id" target="_blank">
-            <i class="ri-youtube-fill" style="color: #ef4444;"></i> 
+            <i class="ri-youtube-fill" style="color: #ef4444;"></i>
             <span>How To Unlock</span>
         </a>
     </nav>
@@ -918,20 +918,11 @@
             setTimeout(() => { document.getElementById('locker-iframe').src = 'about:blank'; }, 300);
         };
 
-        // ── Scroll Logic ──
-        let lastScroll = 0;
+        // Scroll Logic for Header
         const header = document.getElementById('main-header');
-
         window.addEventListener('scroll', () => {
-            const y = window.scrollY;
-            if (y > 50) header.classList.add('scrolled');
+            if (window.scrollY > 50) header.classList.add('scrolled');
             else header.classList.remove('scrolled');
-
-            if (y > lastScroll && y > 80) header.classList.add('hide');
-            else header.classList.remove('hide');
-            
-            lastScroll = y;
-            if(backToTopBtn) backToTopBtn.classList.toggle('visible', y > 300);
         }, { passive: true });
 
         const heroSection = document.getElementById('heroSection');
@@ -1006,17 +997,6 @@
                 renderGames(searchInput.value);
             });
         }
-
-        // ── Bottom Nav Logic ──
-        const bottomNavLinks = document.querySelectorAll('.bottom-nav a');
-        bottomNavLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                if(this.getAttribute('target') !== '_blank') {
-                    bottomNavLinks.forEach(l => l.classList.remove('active'));
-                    this.classList.add('active');
-                }
-            });
-        });
 
         // Initialize Everything
         initSlider();
